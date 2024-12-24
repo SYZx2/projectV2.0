@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mainpage</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <style>
+    body {
+      background-image: url("MH-Outlanders.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+      font-family: sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 20px;
+      min-height: 100vh;
+    }
+
+    #game-image {
+      max-width: 80%;
+      height: auto;
+      opacity: 0;
+      animation: fade-in 1s forwards;
+      transition: transform 0.3s ease-in-out;
+      margin-top: 20px;
+    }
+
+    #game-image:hover {
+      transform: scale(1.05);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-top: 1em;
+      animation: bounce 1s 0.5s both;
+      text-shadow: 0 0 15px #ffd700, 0 0 30px #ff8c00;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+
+    .content-wrapper {
+      max-width: 900px;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      margin-top: 50px;
+    }
+
+    .content-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("frame-image.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+
+    .button-container {
+      margin-top: 2em;
+      display: flex;
+      gap: 1.5em;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
+
+    /* Button Style */
+    .button {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 255, 0, 0.6);
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 255, 0, 0.9);
+    }
+
+    .button img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      height: auto;
+      pointer-events: none;
+    }
+
+    .button span {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 1em;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-15px); }
+      60% { transform: translateY(-5px); }
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 1.8em; }
+      .button-container { flex-direction: column; align-items: center; }
+    }
+
+    /* Hide iframe (audio still plays) */
+    iframe {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Audio from YouTube via iframe (video hidden) -->
+  <iframe width="0" height="0" src="https://www.youtube.com/embed/48hVB16mFOA?autoplay=1&loop=1&playlist=48hVB16mFOA" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+
+  <div class="content-wrapper">
+    <img id="game-image" src="ot.png" alt="Monster Hunter Outlanders">
+    <h1>Monster Hunter Outlanders</h1>
+    <div class="button-container">
+      <a class="button" href="https://www.monsterhunter.com/" target="_blank" style="background-image: url('tc-4.png');">
+        <img src="scroll.png" alt="">
+        <span>Official Site</span>
+      </a>
+      <a class="button" href="https://www.youtube.com/results?search_query=monster+hunter+wilds" target="_blank" style="background-image: url('tc-4.png');">
+        <img src="sns_yt_w.png" alt="">
+        <span>YouTube</span>
+      </a>
+      <a class="button" href="#" style="background-image: url('tc-4.png');">
+        <img src="logo3.png" alt="">
+        <span>More 1</span>
+      </a>
+      <a class="button" href="#" style="background-image: url('tc-4.png');">
+        <img src="logo4.png" alt="">
+        <span>More 2</span>
+      </a>
+      <a class="button" href="#" style="background-image: url('tc-4.png');">
+        <img src="logo5.png" alt="">
+        <span>More 3</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
